@@ -1,0 +1,86 @@
+[
+  {
+    "name": "FISHBEARD", 
+    "company": "AL MERRICK",
+    "description": "Parker Coffin said it first: 'A NeckBeard 2 would work sick as a keel-fin fish!' So we go to work redesigning the back half of the NB2 template and rocker, paired the board with our CI Keel Fins, and the FishBeard was born.",
+    "price": 670,
+    "image": "../../assets/surfboard-channel-island-the-proton.jpg"
+  },  
+  {
+    "name": "Performer PC Carbon Tri Fins", 
+    "company": "FCS",
+    "description": "Balance of speed, flow and response. Suitable for all conditions.",
+    "price": 219,
+    "image": "../../assets/FCS-II-Performer-PC-Carbon-SKU-FPER-CC02-TS-R-500x500.jpg"
+  },
+  {
+    "name": "Kaiama Surf Leash", 
+    "company": "DAKINE",
+    "description": "Dakine was founded on designing a better surf leash. The Kaimana surf leash builds on Dakine surf leash legacy with increased durability, comfort and performance. Designed for surfing peaks up to a couple feet overhead, it uses 1/4-inch (6.5mm) Dura-Cord thats refined for reduced drag without compromising on strength. The low-profile ankle cuff conforms to the shape of your ankle for a zero-distraction fit.",
+    "price": 46,
+    "image": "../../assets/20S_Dakine_Kaimana_Leash_Detail_6_A.jpg"
+  },
+  {
+    "name": "Furnace Ultra Chest Zip Fullsuit", 
+    "company": "BILLABONG",
+    "description": "Continuous innovation brings an unparalleled level of heat to the Furnace Ultra. The warmest wetsuit in the world, our top shelf mens wetsuit now features Billabong exclusive Furnace Graphene. Innovative new graphene wrapped yarns combine with carbon fibers for a wetsuit that is lighter, stronger and warmer for longer. The pinnacle of wetsuit technology, Furnace Graphene is 50% lighter than traditional hollow fiber liners and 200x stronger than steel.",
+    "price": 399,
+    "image": "../../assets/billabong suit.jpg"
+  },
+  {
+    "name": "Round Toe Reef Surf Boots", 
+    "company": "QUICKSILVER",
+    "description": "Round Toe Boots",
+    "price": 113,
+    "image": "../../assets/quickSilver booties.jpg"
+  },
+  {
+    "name": "Sex Wax", 
+    "company": "Mr Zogs",
+    "description": "Sex Wax Mr Zogs Quick Humps Surf Wax",
+    "price": 10,
+    "image": "../../assets/wax.jpg"
+  },
+  {
+    "name": "Lido Solid Short Mens", 
+    "company": "Volcom",
+    "description": "Volcom has a variety of surf specific Lido board shorts, and the Men's Lido Solid Mod Board Short stands out of the collection with bold colors and classic styles. Its Repreve fabric consists of recycled fibers, and it offers a four way stretch for the surf and quick drying comfort on the sands.",
+    "price": 35,
+    "image": "../../assets/volcomShorts.jpg"
+  },
+  {
+    "name": "Travel 2 All Purpose", 
+    "company": "FCS",
+    "description": "10mm foam body with extra 5mm nose padding and marine grade zippers, this cover is purpose designed for comfortable single board travel.",
+    "price": 120,
+    "image": "../../assets/case.jpg"
+  },
+  {
+    "name": "Surfboard Grip", 
+    "company": "Ocean And Earth",
+    "description": "3 Piece Traction Surfboard Grip Owen Wright Tail Pad Blue",
+    "price": 60,
+    "image": "../../assets/grip.jpg"
+  },
+  {
+    "name": "Lycra", 
+    "company": "O'Neill",
+    "description": "Basic Skins Rash Guard",
+    "price": 26,
+    "image": "../../assets/lycra.jpg"
+  },
+  {
+    "name": "Sista Brotha", 
+    "company": "RUSTY",
+    "description": "The latest design of famous surfer Noa Deane, the Sista Brotha from Rusty Surfboards, was developed based on his own experience and travels. Noa has surfed in places like Australia, Telo Islands, France, Morocco and a lot more, so he knows what kind of surfboard design would not only work but also excel in different places or conditions, may that be in reefs, beaches or points. The Sista Brotha has a single concave moderate entry locker with a low tail rocker design.",
+    "price": 695,
+    "image": "../../assets/Rusty-Sista-Brotha.jpg"
+  },
+  {
+    "name": "Flamingo Bay", 
+    "company": "RVCA",
+    "description": "Men’s Hawaiian shirt. Vibrant pink Flamingos feed on brine shrimp in a moonlit bay. Watch them wade around on a cool mint green background. Made in Hawaii of 100% cool cotton.",
+    "price": 34,
+    "image": "../../assets/Hawaiian-Shirt-Flamingo-Bay-Mint-Green.jpg"
+  }
+]

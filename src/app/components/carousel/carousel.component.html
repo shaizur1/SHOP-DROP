@@ -1,0 +1,13 @@
+<ngb-carousel>
+    <ng-container *ngFor="let img of carouselArray">
+        <ng-template ngbSlide class="carousel-item">
+            <div class="carousel-inner">
+                <img src={{img.src}} alt={{img.alt}}>
+            </div>
+            <div class="carousel-caption">
+                <h1 class="display-4">shop&drop</h1>
+                <h3>Make Yourself a True Surfer</h3>
+            </div>
+        </ng-template>
+    </ng-container>
+</ngb-carousel>

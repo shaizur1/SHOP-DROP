@@ -1,0 +1,44 @@
+<p class="headl">Contact Me</p>
+<hr class="light-100">
+<div class="card">
+  <div class="card-body">
+    <form [formGroup] = "reactiveForm">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" formControlName="fullName" #fullName class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['fullName'].invalid && (reactiveForm.controls['fullName'].dirty || reactiveForm.controls['fullName'].touched)" class="alert alert-danger">Please Enter Chars Only!
+        <div *ngIf="reactiveForm.controls['fullName'].errors.required">
+          Full Name is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" #email class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['email'].invalid && (reactiveForm.controls['email'].dirty || reactiveForm.controls['email'].touched)" class="alert alert-danger">Invalid Sign!
+        <div *ngIf="reactiveForm.controls['email'].errors.required">
+          Email Address is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phone" #phone class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['phone'].invalid && (reactiveForm.controls['phone'].dirty || reactiveForm.controls['phone'].touched)" class="alert alert-danger">Please Enter Numbers Only!
+        <div *ngIf="reactiveForm.controls['phone'].errors.required">
+          Phone Number is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Message Here</label>
+        <textarea formControlName="message" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-outline-dark" (click)="send(fullName.value, email.value, phone.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

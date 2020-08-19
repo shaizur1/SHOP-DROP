@@ -1,0 +1,22 @@
+<div class="carousel-slide">
+  <app-carousel [carouselArray]="carouselData"></app-carousel>
+</div>
+<div class="container1">
+  <p class="headl">Shop Now</p>
+  <hr class="light-100">
+  <div class="form-group">
+    <input [(ngModel)]="query" class="form-control" type="text" placeholder="Search For a Product" />
+  </div>
+</div>
+<div class="container2">
+  <div class="p-grid">
+    <div class="p-flex-in" *ngFor="let product of products | search: query | paginate: paging">
+      <a [routerLink]="['ProductDetails', product._id]"><img class="p-img" src="{{ product.image }}" /></a>
+      <div class="p-name">{{ product.name }}</div>
+      <div class="p-price">{{ product.price }}$</div>
+    </div>
+  </div>
+  <div id="pagination">
+    <pagination-controls (pageChange)="changPage($event)"></pagination-controls>
+  </div>
+</div>

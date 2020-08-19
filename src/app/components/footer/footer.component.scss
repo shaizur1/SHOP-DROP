@@ -1,0 +1,26 @@
+footer {
+    background-color: black;
+    color: #d5d5d5;
+    padding-top: 0.5rem;
+    .row {
+      text-align: center;
+      img {
+        width: 64px;
+        height: 64px;
+      }
+      .light {
+        border-top: 1px solid #d5d5d5;
+        width: 70%;
+        margin-top: .8rem;
+        margin-bottom: 1rem;
+      }
+      .col-12 {
+        height: 60px;
+        .light-100 {
+          border-top: 1px solid #d5d5d5;
+          margin-top: .1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }

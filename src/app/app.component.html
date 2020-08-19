@@ -1,0 +1,20 @@
+<ng2-slim-loading-bar color="white"></ng2-slim-loading-bar>
+<header>
+  <nav class="navbar navbar-expand-md stiky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/"><img src="../assets/logo.jpg"></a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">								
+          <li class="nav-item" *ngFor="let navButton of navButtons">
+            <a class="nav-link" [routerLink]="[navButton.routerLink]">{{navButton.logo}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<section>
+  <router-outlet></router-outlet>
+</section>
+<app-footer></app-footer>
+

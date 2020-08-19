@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6" *ngIf="product">
+      <img class="img-fluid" src="{{ product.image }}"/>
+    </div>
+    <div class="col-lg-6">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <h6>{{ product.price }}$</h6>
+      <div class="input-group-prepend mb-3">
+        <strong>Qantity:</strong>
+        <span><input class="input-group" [(ngModel)]="quantity" type="number" id="{{ product.name }}" min="1"/></span>
+      </div> 
+      <div class="input-group-prepend mb-3">
+        <a class="btn btn-outline-dark" (click)="addToCart(product)">Add to Cart</a>  
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="light-100">
+<div class="container2">	
+  <div class="p-grid">
+    <div class="p-flex-in" *ngFor="let product of randomProducts">
+      <a [routerLink]="['/ProductDetails', product._id]"><img class="p-img" src="{{ product.image }}"/></a>
+      <div class="p-name">{{ product.name }}</div>
+      <div class="p-price">{{ product.price }}$</div>
+    </div>
+  </div>

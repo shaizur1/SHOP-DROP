@@ -1,0 +1,40 @@
+<div class="container1">
+  <p class="headl">Your Cart</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Company</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>SubTotal</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td><a [routerLink]="['/ProductDetails', product._id]"><img class="p-img" src="{{ product.image }}"/></a></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.company }}</td>
+        <td>{{ product.price }}$</td>
+        <td><input class="input-group" [value]="product.quantity" type="number" min="1" (change)=changeQuantity($event,product)/></td>
+        <td>{{ product.price * product.quantity }}$</td>
+        <td><a (click)="removeProduct(product)" class="btn btn-outline-dark">x</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container2">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="p-flex-in">
+        <strong>Total Price: </strong>
+        <strong>{{ total }}$</strong>
+      </div>
+      <div class="input-group-prepend mb-3">
+        <a class="btn btn-outline-dark" (click)="clearCart()">Clear Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
