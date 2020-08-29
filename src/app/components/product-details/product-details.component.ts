@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductDetailsService } from 'src/app/services/product-details.service';
+import { DatabaseService } from 'src/app/services/database.service';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
-import { HomePageService } from '../../services/home-page.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product'
 import { Subscription } from 'rxjs';
@@ -19,15 +18,11 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   quantity;
   subscription: Subscription;
 
-  constructor(private productDetailsService: ProductDetailsService,
-    private shoppingCartService: ShoppingCartService,
-    private homePageService: HomePageService,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private databaseService: DatabaseService, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe((params) => {
-      this.productDetailsService.getProduct(params['id']).subscribe((res) => {
+      this.databaseService.getProductByID(params['id']).subscribe((res) => {
         this.product = res;
         if (this.products) {
           this.getRandomProducts();          
@@ -35,7 +30,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.quantity = 1;
       });
     });
-    this.subscription = this.homePageService.getProducts().subscribe((data: Product[]) => {
+    this.subscription = this.databaseService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
       this.getRandomProducts();
     });

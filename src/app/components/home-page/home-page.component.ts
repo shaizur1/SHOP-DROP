@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HomePageService } from '../../services/home-page.service';
+import { DatabaseService } from '../../services/database.service';
 import { Product } from '../../models/product';
 import { Subscription } from 'rxjs';
 
@@ -15,12 +15,12 @@ export class HomePageComponent implements OnInit, OnDestroy {
   paging: any;
   subscription: Subscription;
   carouselData = [
-    {src: '../../../assets/background5.jpg', alt: 'first slide'},
-    {src: '../../../assets/background7.jpg', alt: 'second slide'},
+    {src: '../../../assets/background1.jpg', alt: 'first slide'},
+    {src: '../../../assets/background5.jpg', alt: 'second slide'},
     {src: '../../../assets/background8.jpg', alt: 'third slide'}
   ];
 
-  constructor(private homePageService: HomePageService) { 
+  constructor(private databaseService: DatabaseService) { 
     this.paging = {
       itemsPerPage: 4, 
       currentPage: 1,
@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.homePageService.getProducts().subscribe((data: Product[]) => {
+    this.subscription = this.databaseService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
     });
   }

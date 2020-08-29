@@ -2,13 +2,13 @@
 <hr class="light-100">
 <div class="card">
   <div class="card-body">
-    <form [formGroup] = "reactiveForm">
+    <form [formGroup]="reactiveForm">
       <div class="form-group">
         <label>Full Name</label>
-        <input type="text" formControlName="fullName" #fullName class="form-control"/>
+        <input type="text" formControlName="name" #name class="form-control"/>
       </div>
-      <div *ngIf="reactiveForm.controls['fullName'].invalid && (reactiveForm.controls['fullName'].dirty || reactiveForm.controls['fullName'].touched)" class="alert alert-danger">Please Enter Chars Only!
-        <div *ngIf="reactiveForm.controls['fullName'].errors.required">
+      <div *ngIf="reactiveForm.controls['name'].invalid && (reactiveForm.controls['name'].dirty || reactiveForm.controls['name'].touched)" class="alert alert-danger">Please Enter Chars Only!
+        <div *ngIf="reactiveForm.controls['name'].errors.required">
           Full Name is Required!
         </div>
       </div>
@@ -35,7 +35,7 @@
         <textarea formControlName="message" class="form-control"></textarea>
       </div>
       <div class="form-group">
-        <button class="btn btn-outline-dark" (click)="send(fullName.value, email.value, phone.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+        <button class="btn btn-outline-dark" (click)="sendMessage(name, email, phone, message)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
           Send
         </button>
       </div>

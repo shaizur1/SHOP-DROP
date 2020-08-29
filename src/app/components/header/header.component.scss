@@ -1,0 +1,21 @@
+.navbar {
+  padding: .1rem;
+  background-color: black;
+  .navbar-brand img{
+    width: 80px;
+    height: 80px;
+  }
+  .navbar-toggler-icon {
+    background-image: none;
+  }
+  .navbar-nav li {
+    margin: 15px;
+    .nav-link {
+      font-size: 1.2em;
+      color: white;
+    }
+    :hover {
+      color: rgb(206, 206, 206);
+    }
+  }
+}

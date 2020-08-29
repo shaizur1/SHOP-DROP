@@ -8,12 +8,17 @@
     <input [(ngModel)]="query" class="form-control" type="text" placeholder="Search For a Product" />
   </div>
 </div>
-<div class="container2">
-  <div class="p-grid">
-    <div class="p-flex-in" *ngFor="let product of products | search: query | paginate: paging">
-      <a [routerLink]="['ProductDetails', product._id]"><img class="p-img" src="{{ product.image }}" /></a>
-      <div class="p-name">{{ product.name }}</div>
-      <div class="p-price">{{ product.price }}$</div>
+<div class="container-fluid padding">
+  <div class="row padding">
+    <div class="col-md-3" *ngFor="let product of products | search: query | paginate: paging">
+      <div class="card">
+        <img class="card-img-top" src="{{ product.image }}"/>
+        <div class="card-body">
+          <h6 class="card-title">{{ product.name }}</h6>
+          <p class="card-text">{{ product.price }}$</p>
+          <a class="btn btn-outline-dark" [routerLink]="['ProductDetails', product._id]">More Details</a>
+        </div>
+      </div>
     </div>
   </div>
   <div id="pagination">
