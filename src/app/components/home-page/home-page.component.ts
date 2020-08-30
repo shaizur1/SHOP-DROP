@@ -14,11 +14,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   products: Product[];
   paging: any;
   subscription: Subscription;
-  carouselData = [
-    {src: '../../../assets/background1.jpg', alt: 'first slide'},
-    {src: '../../../assets/background5.jpg', alt: 'second slide'},
-    {src: '../../../assets/background8.jpg', alt: 'third slide'}
-  ];
 
   constructor(private databaseService: DatabaseService) { 
     this.paging = {
