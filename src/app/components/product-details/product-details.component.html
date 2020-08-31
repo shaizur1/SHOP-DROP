@@ -1,3 +1,5 @@
+<p class="headl">Product Details</p>
+<hr class="light-100">
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6" *ngIf="product">
@@ -6,9 +8,9 @@
     <div class="col-lg-6">
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
-      <h6>{{ product.price }}$</h6>
       <div class="input-group-prepend mb-3">
-        <strong>Qantity:</strong>
+        <h6>Price: {{ product.price }}$</h6>
+        <h6 class="quantity">Qantity:</h6>
         <span><input class="input-group" [(ngModel)]="quantity" type="number" id="{{ product.name }}" min="1"/></span>
       </div> 
       <div class="input-group-prepend mb-3">
@@ -18,11 +20,16 @@
   </div>
 </div>
 <hr class="light-100">
-<div class="container2">	
-  <div class="p-grid">
-    <div class="p-flex-in" *ngFor="let product of randomProducts">
-      <a [routerLink]="['/ProductDetails', product._id]"><img class="p-img" src="{{ product.image }}"/></a>
-      <div class="p-name">{{ product.name }}</div>
-      <div class="p-price">{{ product.price }}$</div>
+<div class="container-fluid padding">	
+  <div class="row padding">
+    <div class="col-sm-3" *ngFor="let product of randomProducts">
+      <div class="card">
+        <a [routerLink]="['/ProductDetails', product._id]"><img class="card-img-top" src="{{ product.image }}"/></a>
+        <div class="card-body">
+          <h6 class="card-title">{{ product.name }}</h6>
+          <p class="card-text">{{ product.price }}$</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>

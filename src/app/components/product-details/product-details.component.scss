@@ -1,3 +1,10 @@
+.headl {
+  margin-top: 15px;
+  text-align: center;
+  color: black;
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,6 +13,9 @@
     .img-fluid {
       height: 400px;
       width: 400px;
+    }
+    .quantity {
+      margin-left: 40px;
     }
     .input-group {
       width: 50px;
@@ -16,37 +26,30 @@
     }
   }
 }
-.container2 {
-  .p-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    /* Width of columns */
-    grid-template-columns: 33.3% 33.3% 33.3%;
-    .p-flex-in {
+.container-fluid {
+  .row {
+    max-width: 1200px;
+    margin-bottom: 1em;
+    .card {
       box-sizing: border-box;
-      width: 230px;
-      height: auto;
       border: 1px solid #f0f0f0;
-      margin-bottom: 20px;
-    }
-    .p-img {
-      width: 100%;
-      height: 220px;
-      text-align: center;
-      margin-bottom: 7px;
-    }
-    .p-name {
-      font-size: 0.9em;
-      text-align: center;
-      margin-bottom: 2px;
-      width: 95%;
-    }
-    .p-price {
-      color: black;
-      text-align: center;
-      font-size: 0.9em;
-      margin-bottom: 2px;
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+      }
+      .card-body {
+        .card-title {
+          font-size: 1em;
+          text-align: left;
+          margin-bottom: 5px;
+        }
+        .card-text {
+          color: black;
+          text-align: left;
+          font-size: 1.1em;
+        }
+      }
     }
   }
 }

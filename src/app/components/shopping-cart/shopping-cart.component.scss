@@ -28,7 +28,9 @@
         color: white;
     }
     .input-group-prepend {
-        margin-top: 10px;
+        .total {
+            margin-left: 5px;
+        }
     }
 
 }

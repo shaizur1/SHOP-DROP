@@ -43,7 +43,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
 
   getRandomProducts() {
     this.randomProducts = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const randomProduct = this.products[Math.floor(Math.random() * this.products.length)];
       if (randomProduct.name === this.product.name || this.randomProducts.includes(randomProduct)) {
         i--;
