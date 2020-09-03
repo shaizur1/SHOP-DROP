@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
-import { Product } from '../../models/product';
+import { HttpRequestsService } from '../../../services/http-requests.service';
+import { Product } from '../../../models/product';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   paging: any;
   subscription: Subscription;
 
-  constructor(private databaseService: DatabaseService) { 
+  constructor(private httpRequestsService: HttpRequestsService) { 
     this.paging = {
       itemsPerPage: 4, 
       currentPage: 1,
@@ -24,7 +24,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.databaseService.getProducts().subscribe((data: Product[]) => {
+    this.subscription = this.httpRequestsService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
     });
   }

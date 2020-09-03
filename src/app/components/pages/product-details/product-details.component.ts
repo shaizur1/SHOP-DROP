@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DatabaseService } from 'src/app/services/database.service';
-import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { HttpRequestsService } from 'src/app/services/http-requests.service';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../models/product'
+import { Product } from '../../../models/product'
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,13 +16,14 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   products: Product[];
   randomProducts = [];
   quantity;
-  subscription: Subscription;
+  productSub: Subscription;
+  productsSub: Subscription;
 
-  constructor(private databaseService: DatabaseService, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute) { }
+  constructor(private httpRequestsService: HttpRequestsService, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subscription = this.route.params.subscribe((params) => {
-      this.databaseService.getProductByID(params['id']).subscribe((res) => {
+    this.productSub = this.route.params.subscribe((params) => {
+      this.httpRequestsService.getProductByID(params['id']).subscribe((res) => {
         this.product = res;
         if (this.products) {
           this.getRandomProducts();          
@@ -30,7 +31,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
         this.quantity = 1;
       });
     });
-    this.subscription = this.databaseService.getProducts().subscribe((data: Product[]) => {
+    this.productsSub = this.httpRequestsService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
       this.getRandomProducts();
     });
@@ -55,6 +56,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.productSub.unsubscribe();
+    this.productsSub.unsubscribe();
   }
 }

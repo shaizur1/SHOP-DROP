@@ -4,7 +4,8 @@ bodyParser = require('body-parser'),
 cors = require('cors'),
 config = require('./DB'),
 mongoose = require('mongoose'),
-productRoute = require('./routes/product.js');
+productRoute = require('./routes/product.js'),
+messageRoute = require('./routes/message.js');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, {useNewUrlParser: true, useUnifiedTopology: true}).then(
@@ -16,6 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/Products', productRoute);
+app.use('/Messages', messageRoute);
 
 let port = process.env.PORT || 3000;
 app.listen(port, () => {

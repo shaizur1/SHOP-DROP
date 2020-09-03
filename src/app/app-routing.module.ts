@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { AboutComponent } from './components/pages/about/about.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
+import { ShoppingCartComponent } from './components/pages/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},

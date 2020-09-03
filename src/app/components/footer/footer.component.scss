@@ -14,12 +14,19 @@ footer {
         margin-top: .8rem;
         margin-bottom: 1rem;
       }
+      .fa-4x {
+        margin: 10px;
+        color: white;
+        :hover {
+          color: rgb(206, 206, 206);
+        }
+      }
       .col-12 {
         height: 60px;
         .light-100 {
           border-top: 1px solid #d5d5d5;
           margin-top: .1rem;
-          margin-bottom: 1rem;
+          margin-bottom: .1rem;
         }
       }
     }

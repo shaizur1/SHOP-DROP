@@ -5,20 +5,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component'
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AboutComponent } from './components/pages/about/about.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
+import { HomePageComponent } from './components/pages/home-page/home-page.component';
+import { ShoppingCartComponent } from './components/pages/shopping-cart/shopping-cart.component'
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 
-import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { SearchPipe } from './search.pipe';
+
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -43,8 +48,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     NgbModule,
     NgxPaginationModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  // font awesome functionality  
+  constructor(library: FaIconLibrary){
+    library.addIconPacks(fas, far, fab);
+  }
+}
