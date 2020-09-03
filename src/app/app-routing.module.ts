@@ -5,6 +5,7 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 import { ShoppingCartComponent } from './components/pages/shopping-cart/shopping-cart.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'Contact', component: ContactComponent},
   {path: 'ShoppingCart', component: ShoppingCartComponent},
   {path: 'ProductDetails/:id', component: ProductDetailsComponent},
+  {path: 'add', component: AddProductComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,54 @@
+<p class="headl">Add Product</p>
+<hr class="light-100">
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="reactiveForm">
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" formControlName="name" #name class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['name'].invalid && (reactiveForm.controls['name'].dirty || reactiveForm.controls['name'].touched)" class="alert alert-danger">Please Enter Chars Only!
+        <div *ngIf="reactiveForm.controls['name'].errors.required">
+          Product Name is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" formControlName="company" #company class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['company'].invalid && (reactiveForm.controls['company'].dirty || reactiveForm.controls['company'].touched)" class="alert alert-danger">Invalid Sign!
+        <div *ngIf="reactiveForm.controls['company'].errors.required">
+          Company Name is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <input type="text" formControlName="price" #price class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['price'].invalid && (reactiveForm.controls['price'].dirty || reactiveForm.controls['price'].touched)" class="alert alert-danger">Please Enter Numbers Only!
+        <div *ngIf="reactiveForm.controls['price'].errors.required">
+          Price is Required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Image</label>
+        <input type="text" formControlName="image" #image class="form-control"/>
+      </div>
+      <div *ngIf="reactiveForm.controls['image'].invalid && (reactiveForm.controls['image'].dirty || reactiveForm.controls['image'].touched)" class="alert alert-danger">Please Enter Numbers Only!
+        <div *ngIf="reactiveForm.controls['image'].errors.required">
+          Image is Required!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-outline-dark" (click)="addProduct(name.value, company.value, description.value, price.value, image.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+          Add Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

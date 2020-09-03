@@ -24,6 +24,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
     CarouselComponent,
     FooterComponent,
     HeaderComponent,
-    LoadingBarComponent
+    LoadingBarComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
