@@ -10,14 +10,14 @@ messageRoute.route('/send').post((req, res) => {
   const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'yakobson85@gmail.com',
-        pass: 'maalot2@'
+        user: 'shaizur1@gmail.com',
+        pass: ''
       }
     });
     
     const mailOptions = {
-      from: 'yakobson85@gmail.com',
-      to: 'yakobson85@gmail.com',
+      from: 'shaizur1@gmail.com',
+      to: 'shaizur1@gmail.com',
       subject: 'Thank You For Contacting Me',
       html: '<h1>Hello Shopper!</h1>'
     };

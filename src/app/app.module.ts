@@ -25,6 +25,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { ProductsListComponent } from './components/admin/products-list/products-list.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AddProductComponent } from './components/admin/add-product/add-product.
     FooterComponent,
     HeaderComponent,
     LoadingBarComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductsListComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

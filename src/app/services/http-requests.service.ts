@@ -20,22 +20,32 @@ export class HttpRequestsService {
   }
 
   addProduct(name, company, description, price, image){
-    const productObject = {
+    const addProductObject = {
       name: name,
       company: company,
       description: description,
       price: price,
       image: image
     };
-    this.http.post(`${this.products}/add`, productObject).subscribe(res => console.log('Product Added Successfuly' + res));
+    this.http.post(`${this.products}/add`, addProductObject).subscribe(res => console.log(res));
+  }
+
+  updateProduct(id, name, company, description, price, image) {
+    const updateProductObject = {
+      name: name,
+      company: company,
+      description: description,
+      price: price,
+      image: image
+    }
+    this.http.put(`${this.products}/update/${id}`, updateProductObject).subscribe(res => console.log(res));
+  }
+
+  deleteProduct(id) {
+    return this.http.get(`${this.products}/delete/${id}`).subscribe(res => console.log(res));
   }
 
   sendMessage() {
     this.http.post(`${this.messages}/send`, "Test").subscribe(res => console.log(res));
-   
-    //Timeout for page reload after successful submit of the form
-    setTimeout(() => {
-      location.reload();
-    }, 3000);
   }
 }

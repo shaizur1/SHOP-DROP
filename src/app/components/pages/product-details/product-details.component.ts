@@ -16,14 +16,15 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   products: Product[];
   randomProducts = [];
   quantity;
+  paramsSub: Subscription;
   productSub: Subscription;
   productsSub: Subscription;
 
   constructor(private httpRequestsService: HttpRequestsService, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.productSub = this.route.params.subscribe((params) => {
-      this.httpRequestsService.getProductByID(params['id']).subscribe((res) => {
+    this.paramsSub = this.route.params.subscribe((params) => {
+      this.productSub = this.httpRequestsService.getProductByID(params['id']).subscribe((res) => {
         this.product = res;
         if (this.products) {
           this.getRandomProducts();          
@@ -56,6 +57,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.paramsSub.unsubscribe();
     this.productSub.unsubscribe();
     this.productsSub.unsubscribe();
   }

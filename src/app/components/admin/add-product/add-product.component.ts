@@ -15,11 +15,11 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit() {
     this.reactiveForm = this.formBuilder.group({
-      name: ['', [Validators.required,Validators.pattern('^[a-zA-Z0-9@._-]+$')]],
-      company: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9@._-]+$')]],
+      name: ['', [Validators.required,Validators.pattern('^[a-zA-Z 0-9@._-]+$')]],
+      company: ['', [Validators.required, Validators.pattern('^[a-zA-Z 0-9@._-]+$')]],
       description: [''],
-      price:['', , [Validators.required, Validators.pattern('^[0-9]+$')]],
-      image: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]]
+      price: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      image: ['']
     });
   }
 

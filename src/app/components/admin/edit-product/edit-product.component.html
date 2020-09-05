@@ -1,4 +1,4 @@
-<p class="headl">Add Product</p>
+<p class="headl">Edit Product</p>
 <hr class="light-100">
 <div class="card">
   <div class="card-body">
@@ -44,8 +44,8 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-outline-dark" [routerLink]="['/list']" (click)="addProduct(name.value, company.value, description.value, price.value, image.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
-          Add Product
+        <button class="btn btn-outline-dark" (click)="updateProduct(name.value, company.value, description.value, price.value, image.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+          Update Product
         </button>
       </div>
     </form>

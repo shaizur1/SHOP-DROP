@@ -42,9 +42,9 @@ productRoute.route('/add').post((req, res) => {
   });
 
 // Update product by ID - POST or PUT
-productRoute.route('/update/:id').post((req, res) => {
+productRoute.route('/update/:id').put((req, res) => {
     let id = req.params.id;
-    product.findById(id, (err, updateByID) => {
+    Product.findById(id, (err, updateByID) => {
       if(!updateByID) {
         console.log(err);
         return new Error('Could not load document!');
@@ -57,7 +57,7 @@ productRoute.route('/update/:id').post((req, res) => {
         updateByID.image = req.body.image;
         updateByID.save().then(prod => {
           console.log(prod);
-          res.json('Update Successfully!');
+          res.json('Product updated Successfully!');
         }).catch(err => {
           console.log(err);
           res.status(400).send('Unable to update!');
@@ -65,22 +65,13 @@ productRoute.route('/update/:id').post((req, res) => {
       }
     });
   });
-
-  // Edit product by ID
-  productRoute.route('/edit/:id').get((req, res) => {
-    let id = req.params.id;
-    product.findById(id, (err, editByID) => {
-      if(err) return next(err);
-      res.json(editByID);
-    });
-  });
   
   // Delete product
   productRoute.route('/delete/:id').get((req, res) => {
     // Delete based on id from database
-    product.findByIdAndDelete({_id:req.params.id}, (err) => {
+    Product.findByIdAndDelete({_id:req.params.id}, (err) => {
       if(err) res.json(editByID);
-      else res.json('Deleted product successfully!');
+      else res.json('Product deleted successfully!');
     });
   });
   
