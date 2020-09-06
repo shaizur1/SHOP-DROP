@@ -44,10 +44,11 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-outline-dark" [routerLink]="['/list']" (click)="addProduct(name.value, company.value, description.value, price.value, image.value)" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+        <button class="btn btn-outline-dark" (click)="addProduct(name.value, company.value, description.value, price.value, image.value)" [routerLink]="['/list']" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
           Add Product
         </button>
       </div>
     </form>
+    <button class="btn btn-outline-dark" [routerLink]="['/list']">Back to List</button>
   </div>
 </div>

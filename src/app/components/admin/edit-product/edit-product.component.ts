@@ -15,11 +15,9 @@ export class EditProductComponent implements OnInit, OnDestroy {
   reactiveForm: FormGroup;
   product: any = {};
   products: Product[];
-  paramsSub1: Subscription;
-  paramsSub2: Subscription;
+  paramsSub: Subscription;
   productSub1: Subscription;
   productSub2: Subscription;
-  productsSub: Subscription;
 
   constructor(private formBuilder: FormBuilder,
               private httpRequestsService: HttpRequestsService,
@@ -28,7 +26,7 @@ export class EditProductComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.createForm();
-    this.paramsSub1 = this.route.params.subscribe((params) => {
+    this.paramsSub = this.route.params.subscribe((params) => {
       this.productSub1 = this.httpRequestsService.getProductByID(params['id']).subscribe((res) => {
         this.product = res;
       });
@@ -47,10 +45,10 @@ export class EditProductComponent implements OnInit, OnDestroy {
   }
 
   updateProduct(name, company, description, price, image) {
-    this.paramsSub2 = this.route.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       this.httpRequestsService.updateProduct(params['id'], name, company, description, price, image);
-      //get the list after update
-      this.productsSub = this.httpRequestsService.getProducts().subscribe((data: Product[]) => {
+        //get the list after update
+      this.httpRequestsService.getProducts().subscribe((data: Product[]) => {
         this.products = data;
         this.router.navigate(['/list']);
       });
@@ -71,10 +69,8 @@ export class EditProductComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.paramsSub1.unsubscribe();
-    this.paramsSub2.unsubscribe();
+    this.paramsSub.unsubscribe();
     this.productSub1.unsubscribe();
     this.productSub2.unsubscribe();
-    this.productsSub.unsubscribe();
   }
 }
