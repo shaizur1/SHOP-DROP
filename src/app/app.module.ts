@@ -14,6 +14,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { ProductsListComponent } from './components/admin/products-list/products-list.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
 
 import { SearchPipe } from './search.pipe';
 
@@ -24,9 +27,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { AddProductComponent } from './components/admin/add-product/add-product.component';
-import { ProductsListComponent } from './components/admin/products-list/products-list.component';
-import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [

@@ -40,7 +40,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
 
   addToCart(productObject) {
     this.shoppingCartService.addProduct(productObject, this.quantity);
-    console.log('Product added!');
+    alert('Product added successfully!');
   }
 
   getRandomProducts() {
