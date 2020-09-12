@@ -31,5 +31,6 @@ export class ContactComponent implements OnInit {
     }
     this.success = true;
     this.httpRequestsService.sendMessage();
+    alert('Message sent successfully!');
   }
 }
