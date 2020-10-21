@@ -35,7 +35,7 @@
         <textarea formControlName="message" class="form-control"></textarea>
       </div>
       <div class="form-group">
-        <button class="btn btn-outline-dark" (click)="send()" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
+        <button class="btn btn-outline-dark" [routerLink]="['/']" (click)="send()" [disabled]="reactiveForm.pristine || reactiveForm.invalid">
           Send
         </button>
       </div>
