@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpRequestsService {
 
-  products = 'http://localhost:3000/Products';
-  messages = 'http://localhost:3000/Messages';
+  products = 'Products';
+  messages = 'Messages';
 
   constructor(private http: HttpClient) { }
 
