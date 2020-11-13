@@ -38,8 +38,7 @@ export class ShoppingCartComponent implements OnInit {
     this.updateCart();
   }
 
-  clearCart(event) {
-    console.log(event);
+  clearCart() {
     this.shoppingCartService.clearCart();
     this.updateCart();
   }
